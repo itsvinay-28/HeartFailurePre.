@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Failure Predictor</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/predict" method="POST">
+        <h2>Heart Failure Prediction</h2>
+        <input type="text" name="age" placeholder="Age" required>
+        <input type="text" name="ejection_fraction" placeholder="Ejection Fraction" required>
+        <input type="text" name="serum_creatinine" placeholder="Serum Creatinine" required>
+        <input type="text" name="time" placeholder="Follow-up Time (days)" required>
+        <button type="submit">Predict</button>
+        <h3>{{ prediction_text }}</h3>
+    </form>
+</body>
+</html>
